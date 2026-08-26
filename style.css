@@ -1,0 +1,6 @@
+/* resetar as configurações do css*/
+*{
+margin: 0;/*-Margin no CSS é o espaço vazio criado ao redor (fora) das bordas de um elemento. Ela serve para afastar um elemento dos outros componentes da página, controlando o espaçamento externo.*/
+padding: 0;
+box-sizing: border-box;
+}
