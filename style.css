@@ -1,8 +1,19 @@
 /* resetar as configurações do css*/
-*{
+
 margin: 0;/*-Margin no CSS é o espaço vazio criado ao redor (fora) das bordas de um elemento. Ela serve para afastar um elemento dos outros componentes da página, controlando o espaçamento externo.*/
 padding: 0;
 box-sizing: border-box;
+*{ margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+
+background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+    padding: 20px;
 }
 h1{color:#1a365d;
 text-align: center;
@@ -10,4 +21,55 @@ font-size:2.5rem;
 margin-bottoom:15px;
 }
 h2{color:#2b6cb0;
-margin-top:10px}
+margin-top:10px; 
+margin-bottom:10px;
+border-bottom: 2px solid #5a0d8d;
+padding-bottom: 5px;
+}
+p{
+font-size: 1.1rem;
+margin-bottom: 15px;
+}
+img{max-width:220px;
+height:auto;
+border-radio:8px;
+display:block;
+margin:0 aute 20px auto;
+box-shadow: 0 4px 6px rgb(0,0,0,0,1);
+}
+ul {
+    list-style-type: square;
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+li {
+    padding: 5px 0;
+    font-weight: bold;
+}
+a {
+    display: inline-block;
+    background-color: #3182ce;
+    color: #ffffff;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+address {
+    font-style: normal;
+    background-color: #e2e8f0;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Limitando a largura máxima para centralizar o conteúdo no meio da tela */
+h1, h2, p, ul, a, address {
+    width: 100%;
+    max-width: 700px;
+}
