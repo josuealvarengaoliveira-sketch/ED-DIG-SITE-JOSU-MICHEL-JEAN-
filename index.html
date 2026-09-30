@@ -1,15 +1,121 @@
 <!DOCTYPE html>
+<!-- O atributo lang="pt-BR" é vital para que os leitores de tela usem a pronúncia correta em português -->
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Neymar Cuecas</title>
+    <title>Neymar Cuecas - Roupas Íntimas Confortáveis e Tecnológicas</title>
 </head>
 <body>
-  <h1>Neymar Cuecas</h1>
-  <h2>roupas intimas</h2>
-  <p>venda de roupa intimas do Neymar Junior; feitas de algodao e polieter</p>
-<source>file:///tmp/guest-2pu97l/%C3%81rea%20de%20trabalho/Neymar%20%20Cuecas/download.html 
+
+    <!-- Link de salto (Skip Link): Permite que usuários de teclado pulem o menu direto para o conteúdo principal.
+         Fica escondido visualmente, mas aparece ao receber foco (Tab). -->
+    <a href="#conteudo-principal" class="link-salto">Pular para o conteúdo principal</a>
+
+    <!-- <header>: Define o cabeçalho da página (área introdutória e de navegação) -->
+    <header class="cabecalho-principal">
+        <div class="container cabecalho-container">
+            <!-- H1 deve ser o título principal e único do documento para manter a hierarquia de cabeçalhos (A11y) -->
+            <h1 class="logo">Neymar Cuecas</h1>
+            
+            <!-- <nav>: Tag semântica para indicar blocos de links de navegação do site -->
+            <!-- aria-label: Identifica o propósito da navegação para leitores de tela -->
+            <nav aria-label="Navegação principal">
+                <ul class="menu-lista">
+                    <li><a href="#produtos" class="menu-link">Produtos</a></li>
+                    <li><a href="#institucional" class="menu-link">Sobre Nós</a></li>
+                    <li><a href="#contato" class="menu-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- <main>: Elemento único que engloba o conteúdo central e exclusivo da página. 
+         O id="conteudo-principal" é o alvo do nosso Skip Link criado acima. -->
+    <main id="conteudo-principal">
+
+        <!-- <section>: Agrupa conteúdos logicamente relacionados. Sempre deve ter um cabeçalho (H2-H6) -->
+        <!-- Seção Hero / Apresentação Institucional -->
+        <section id="institucional" class="secao-hero" aria-labelledby="titulo-institucional">
+            <div class="container">
+                <h2 id="titulo-institucional">Estilo, Conforto e Performance</h2>
+                <p class="paragrafo-destaque">
+                    Conheça a linha oficial de roupas íntimas do <strong>Neymar Junior</strong>. 
+                    Desenvolvidas com uma mistura exclusiva de algodão premium e poliéster, nossas peças oferecem 
+                    alta respirabilidade, toque macio e ajuste perfeito para o seu dia a dia ou atividades esportivas.
+                </p>
+                <!-- Botão interativo simulando link comercial. O foco visual e a semântica de link funcionam perfeitamente -->
+                <a href="#produtos" class="botao-acao">Ver Coleção Completa</a>
+            </div>
+        </section>
+
+        <!-- Seção de Destaques de Produtos -->
+        <section id="produtos" class="secao-produtos" aria-labelledby="titulo-produtos">
+            <div class="container">
+                <h2 id="titulo-produtos">Nossos Produtos</h2>
+                
+                <div class="grade-produtos">
+                    <!-- <article>: Representa uma composição autônoma em um documento (ex: um produto em uma loja) -->
+                    <article class="cartao-produto">
+                        <h3>Cueca Boxer Premium Algodão</h3>
+                        <p>Máximo conforto com costuras invisíveis que evitam atrito. Ideal para uso diário.</p>
+                        <span class="preco">R$ 49,90</span>
+                        <a href="#" class="botao-comprar" aria-label="Comprar Cueca Boxer Premium Algodão">Comprar</a>
+                    </article>
+
+                    <article class="cartao-produto">
+                        <h3>Cueca Trunk Poliéster Performance</h3>
+                        <p>Tecnologia dry-fit com secagem rápida. Perfeita para treinos de alta intensidade.</p>
+                        <span class="preco">R$ 54,90</span>
+                        <a href="#" class="botao-comprar" aria-label="Comprar Cueca Trunk Poliéster Performance">Comprar</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato com Formulário Acessível -->
+        <section id="contato" class="secao-contato" aria-labelledby="titulo-contato">
+            <div class="container">
+                <h2 id="titulo-contato">Fale Conosco</h2>
+                <p>Tem alguma dúvida ou deseja revender nossos produtos? Envie uma mensagem!</p>
+
+                <!-- Formulário com método seguro e estrutura acessível -->
+                <form action="#" method="POST" class="formulario-contato">
+                    
+                    <div class="campo-grupo">
+                        <!-- O atributo 'for' liga o <label> diretamente ao 'id' do <input>. 
+                             Isso faz o leitor de tela ler o nome do campo ao focar nele e expande a área de clique. -->
+                        <label class="rotulo" for="nome">Nome Completo (obrigatório):</label>
+                        <!-- required: Validação nativa de obrigatoriedade. aria-required: Informa leitores de tela -->
+                        <input class="campo-texto" type="text" id="nome" name="nome" required aria-required="true">
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label class="rotulo" for="email">E-mail corporativo ou pessoal (obrigatório):</label>
+                        <input class="campo-texto" type="email" id="email" name="email" required aria-required="true">
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label class="rotulo" for="mensagem">Sua Mensagem:</label>
+                        <textarea class="campo-texto" id="mensagem" name="mensagem" rows="5" required aria-required="true"></textarea>
+                    </div>
+
+                    <!-- Tipo submit para que a tecla 'Enter' submeta o formulário nativamente quando focado -->
+                    <button type="submit" class="botao-enviar">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- <footer>: Define o rodapé do documento, contendo informações institucionais, direitos e links secundários -->
+    <footer class="rodape-principal">
+        <div class="container rodape-container">
+            <p>&copy; 2026 Neymar Cuecas. Todos os direitos reservados.</p>
+            <p>Desenvolvido seguindo as diretrizes de acessibilidade WCAG 2.1 AA.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
